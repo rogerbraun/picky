@@ -61,14 +61,14 @@ The generator
 will generate an example <tt>project_name/app/application.rb</tt> file for
 you with some example code inside.
 </p>
-<h2><a href="Index/Memory.html#M000024">Index::Memory.new</a>(name, source)</h2>
+<h2><a href="Index/Memory.html#M000020">Index::Memory.new(name)</a></h2>
 <p>
 Next, define where your data comes from. You use the <tt><a
-href="Index/Memory.html#M000024">Index::Memory.new</a></tt> method for
+href="Index/Memory.html#M000020">Index::Memory.new</a></tt> method for
 that:
 </p>
 <pre>
-  my_index = Index::Memory.new :some_index_name, some_source
+  my_index = Index::Memory.new :some_index_name
 </pre>
 <p>
 You give the index a name (or identifier), and a source (see <a
@@ -78,7 +78,9 @@ that:
 <pre>
   class MyGreatSearch &lt; Application
 
-    books = Index::Memory.new :books, Sources::CSV.new(:title, :author, :isbn, file:'app/library.csv')
+    books = Index::Memory.new :books do
+      source Sources::CSV.new(:title, :author, :isbn, file:'app/library.csv')
+    end
 
   end
 </pre>
@@ -92,7 +94,7 @@ That on itself won&#8217;t do much good.
 Note that a Redis index is also available: <a
 href="Index/Redis.html#M000030">Index::Redis.new</a>.
 </p>
-<h2>index_instance.define_category(identifier, options = {})</h2>
+<h2>category(identifier, options = {})</h2>
 <p>
 Picky needs us to define categories on the data.
 </p>
@@ -107,8 +109,10 @@ Let&#8217;s go ahead and define a category:
 <pre>
   class MyGreatSearch &lt; Application
 
-    books = Index::Memory.new :books, Sources::CSV.new(:title, :author, :isbn, file:'app/library.csv')
-    books.define_category :title
+    books = Index::Memory.new :books do
+      source   Sources::CSV.new(:title, :author, :isbn, file:'app/library.csv')
+      category :title
+    end
 
   end
 </pre>
@@ -155,8 +159,10 @@ In full glory:
 <pre>
   class MyGreatSearch &lt; Application
 
-    books = index :books, Sources::CSV.new(:title, :author, :isbn, file:'app/library.csv')
-    books.define_category :title
+    books = index :books do
+      source   Sources::CSV.new(:title, :author, :isbn, file:'app/library.csv')
+      category :title
+    end
 
     route %r{^/books$} =&gt; Search.new(books)
 
@@ -185,12 +191,12 @@ Nice, right? Your first query!
 Maybe you don&#8217;t find everything. We need to process the data before
 it goes into the index.
 </p>
-<h2>default_indexing(options = {})</h2>
+<h2>indexing(options = {})</h2>
 <p>
-That&#8217;s what the <tt>default_indexing</tt> method is for:
+That&#8217;s what the <tt>indexing</tt> method is for:
 </p>
 <pre>
-  default_indexing options
+  indexing options
 </pre>
 <p>
 Read more about the options here: <a
@@ -199,17 +205,16 @@ href="http://github.com/floere/picky/wiki/Indexing-configuration">github.com/flo
 <p>
 Same thing with the search text – we need to process that as well.
 </p>
-<h2>default_querying(options = {})</h2>
+<h2>searching(options = {})</h2>
 <p>
-Analog to the default_indexing method, we use the <tt>default_querying</tt>
-method.
+Analog to the indexing method, we use the <tt>searching</tt> method.
 </p>
 <pre>
-  default_querying options
+  searching options
 </pre>
 <p>
 Read more about the options here: <a
-href="http://github.com/floere/picky/wiki/Querying-Configuration">github.com/floere/picky/wiki/Querying-Configuration</a>
+href="http://github.com/floere/picky/wiki/Searching-Configuration">github.com/floere/picky/wiki/Searching-Configuration</a>
 </p>
 <p>
 And that&#8217;s all there is. It&#8217;s incredibly powerful though, as
@@ -230,35 +235,37 @@ Our example, fully fleshed out with indexing, querying, and weights:
 <pre>
   class MyGreatSearch &lt; Application
 
-    default_indexing removes_characters: /[^a-zA-Z0-9\.]/,
-                     stopwords: /\b(and|or|in|on|is|has)\b/,
-                     splits_text_on: /\s/,
-                     removes_characters_after_splitting: /\./,
-                     substitutes_characters_with: CharacterSubstituters::WestEuropean.new,
-                     normalizes_words: [
-                       [/(.*)hausen/, 'hn'],
-                       [/\b(\w*)str(eet)?/, 'st']
-                     ]
+    indexing removes_characters: /[^a-zA-Z0-9\.]/,
+             stopwords: /\b(and|or|in|on|is|has)\b/,
+             splits_text_on: /\s/,
+             removes_characters_after_splitting: /\./,
+             substitutes_characters_with: CharacterSubstituters::WestEuropean.new,
+             normalizes_words: [
+               [/(.*)hausen/, 'hn'],
+               [/\b(\w*)str(eet)?/, 'st']
+             ]
 
-    default_querying removes_characters: /[^a-zA-Z0-9\s\/\-\,\&amp;\&quot;\~\*\:]/,
-                     stopwords: /\b(and|the|of|it|in|for)\b/,
-                     splits_text_on: /[\s\/\-\,\&amp;]+/,
-                     removes_characters_after_splitting: /\./,
-                     substitutes_characters_with: CharacterSubstituters::WestEuropean.new,
-                     maximum_tokens: 4
+    searching removes_characters: /[^a-zA-Z0-9\s\/\-\,\&amp;\&quot;\~\*\:]/,
+              stopwords: /\b(and|the|of|it|in|for)\b/,
+              splits_text_on: /[\s\/\-\,\&amp;]+/,
+              removes_characters_after_splitting: /\./,
+              substitutes_characters_with: CharacterSubstituters::WestEuropean.new,
+              maximum_tokens: 4
 
-    books = Index::Memory.new :books, Sources::CSV.new(:title, :author, :isbn, file:'app/library.csv')
-    books.define_category :title,
-                          qualifiers: [:t, :title, :titre],
-                          partial:    Partial::Substring.new(:from =&gt; 1),
-                          similarity: Similarity::DoubleMetaphone.new(2)
-    books.define_category :author,
-                          partial: Partial::Substring.new(:from =&gt; -2)
-    books.define_category :isbn
+    books = Index::Memory.new :books do
+      source   Sources::CSV.new(:title, :author, :isbn, file:'app/library.csv')
+      category :title,
+               qualifiers: [:t, :title, :titre],
+               partial:    Partial::Substring.new(:from =&gt; 1),
+               similarity: Similarity::DoubleMetaphone.new(2)
+      category :author,
+               partial: Partial::Substring.new(:from =&gt; -2)
+      category :isbn
+    end
 
-    options = { :weights =&gt; { [:title, :author] =&gt; +3, [:author, :title] =&gt; -1 } }
-
-    route %r{^/books$} =&gt; Search.new(books, options)
+    route %r{^/books$} =&gt; Search.new(books) do
+      boost [:title, :author] =&gt; +3, [:author, :title] =&gt; -1
+    end
 
   end
 </pre>
@@ -359,11 +366,11 @@ Delegates to its routing to handle a request.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000002_source')" id="l_M000002_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L181" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L189" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000002_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 181</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 189</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span> <span class="ruby-identifier">env</span>
       <span class="ruby-identifier">rack_adapter</span>.<span class="ruby-identifier">call</span> <span class="ruby-identifier">env</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -386,11 +393,11 @@ Delegates to its routing to handle a request.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000009_source')" id="l_M000009_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L218" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L226" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000009_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 218</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 226</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">check_external_interface</span>
       <span class="ruby-node">&quot;WARNING: No routes defined for application configuration in #{self.class}.&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rack_adapter</span>.<span class="ruby-identifier">empty?</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -420,11 +427,11 @@ Returns a configured tokenizer that is used for indexing by default.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000000_source')" id="l_M000000_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L155" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L163" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000000_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 155</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 163</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">indexing</span> <span class="ruby-identifier">options</span> = {}
       <span class="ruby-constant">Internals</span><span class="ruby-operator">::</span><span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Index</span>.<span class="ruby-identifier">default</span> = <span class="ruby-constant">Internals</span><span class="ruby-operator">::</span><span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Index</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>)
     <span class="ruby-keyword kw">end</span></pre>
@@ -454,11 +461,11 @@ Returns a configured tokenizer that is used for querying by default.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000001_source')" id="l_M000001_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L163" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L171" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000001_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 163</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 171</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">searching</span> <span class="ruby-identifier">options</span> = {}
       <span class="ruby-constant">Internals</span><span class="ruby-operator">::</span><span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">default</span> = <span class="ruby-constant">Internals</span><span class="ruby-operator">::</span><span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>)
     <span class="ruby-keyword kw">end</span></pre>
@@ -481,11 +488,11 @@ Returns a configured tokenizer that is used for querying by default.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000012_source')" id="l_M000012_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L245" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L253" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000012_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 245</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 253</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_routes</span>
       <span class="ruby-identifier">rack_adapter</span>.<span class="ruby-identifier">to_s</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -508,11 +515,11 @@ Returns a configured tokenizer that is used for querying by default.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000011_source')" id="l_M000011_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L229" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/7287d74c08ebfccd07dbbe4a2e0963ccda3360e4/server/lib/picky/application.rb#L237" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000011_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 229</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/application.rb, line 237</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_stats</span>
       <span class="ruby-value str">&quot;\\033[1mIndexing (default)\\033[m:\n\#{Internals::Tokenizers::Index.default.indented_to_s}\n\n\\033[1mQuerying (default)\\033[m:\n\#{Internals::Tokenizers::Query.default.indented_to_s}\n\n\\033[1mIndexes\\033[m:\n\#{Indexes.to_s.indented_to_s}\n\n\\033[1mRoutes\\033[m:\n\#{to_routes.indented_to_s}\n&quot;</span>
     <span class="ruby-keyword kw">end</span></pre>

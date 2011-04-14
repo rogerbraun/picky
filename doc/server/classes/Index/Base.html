@@ -66,7 +66,7 @@ Note: An <a href="../Index.html">Index</a> holds both an
         <dd>
             <ul>
                 
-                <li><a href="#M000026">category</a>,</li>
+                <li><a href="#M000025">category</a>,</li>
                 
                 <li><a href="#M000016">check_name</a>,</li>
                 
@@ -81,13 +81,13 @@ Note: An <a href="../Index.html">Index</a> holds both an
         <dd>
             <ul>
                 
-                <li><a href="#M000025">define_category</a>,</li>
+                <li><a href="#M000026">define_category</a>,</li>
                 
-                <li><a href="#M000020">define_indexing</a>,</li>
+                <li><a href="#M000022">define_indexing</a>,</li>
                 
-                <li><a href="#M000027">define_ranged_category</a>,</li>
+                <li><a href="#M000028">define_ranged_category</a>,</li>
                 
-                <li><a href="#M000022">define_source</a></li>
+                <li><a href="#M000024">define_source</a></li>
                 
             </ul>
         </dd>
@@ -118,7 +118,7 @@ Note: An <a href="../Index.html">Index</a> holds both an
         <dd>
             <ul>
                 
-                <li><a href="#M000028">ranged_category</a></li>
+                <li><a href="#M000027">ranged_category</a></li>
                 
             </ul>
         </dd>
@@ -187,14 +187,14 @@ Create a new index with a given source.
 front end.
 
 </li>
+</ul>
+<h3>Options</h3>
+<ul>
 <li>source: Where the data comes from, e.g. <a
 href="../Sources/CSV.html#M000189">Sources::CSV.new(...)</a>. Optional, can
 be defined in the block using <a href="Base.html#M000023">source</a>.
 
 </li>
-</ul>
-<h3>Options</h3>
-<ul>
 <li>result_identifier: Use if you&#8217;d like a different identifier/name in
 the results than the name of the index.
 
@@ -203,7 +203,8 @@ the results than the name of the index.
 given after_indexing as SQL after the indexing process.
 
 </li>
-<li>tokenizer: The tokenizer to use for this index.
+<li>tokenizer: The tokenizer to use for this index. Optional, can be defined in
+the block using <a href="Base.html#M000021">indexing</a>.
 
 </li>
 </ul>
@@ -211,7 +212,7 @@ given after_indexing as SQL after the indexing process.
 Examples:
 </p>
 <pre>
-  my_index = Index::Memory.new(:my_index, some_source) do
+  my_index = Index::Memory.new(:my_index, source: some_source) do
     category :bla
   end
 
@@ -261,20 +262,95 @@ Examples:
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000026">
+                <div class="title" id="M000025">
                     
-                    <a name="M000026"></a><b>category</b>(category_name, options = {})
+                    <a name="M000025"></a><b>category</b>(category_name, options = {})
                     
                 </div>
                 
                 <div class="description">
                   <p>
-Alias for <a href="Base.html#M000025">define_category</a>
+Defines a searchable category on the index.
 </p>
+<h3>Parameters</h3>
+<ul>
+<li>category_name: This identifier is used in the front end, but also to
+categorize query text. For example, “title:hobbit” will narrow the
+hobbit query on categories with the identifier :title.
+
+</li>
+</ul>
+<h3>Options</h3>
+<ul>
+<li>partial: Partial::None.new or Partial::Substring.new(from: starting_char,
+to: ending_char). Default is Partial::Substring.new(from: -3, to: -1).
+
+</li>
+<li>similarity: Similarity::None.new or
+Similarity::DoubleMetaphone.new(similar_words_searched). Default is
+Similarity::None.new.
+
+</li>
+<li>qualifiers: An array of qualifiers with which you can define which category
+you’d like to search, for example “title:hobbit” will search for
+hobbit in just title categories. Example: qualifiers: [:t, :titre, :title]
+(use it for example with multiple languages). Default is the name of the
+category.
+
+</li>
+<li>qualifier: Convenience options if you just need a single qualifier, see
+above. Example: qualifiers => :title. Default is the name of the category.
+
+</li>
+<li>source: Use a different source than the index uses. If you think you need
+that, there might be a better solution to your problem. Please post to the
+mailing list first with your application.rb :)
+
+</li>
+<li>from: Take the data from the data category with this name. Example: You
+have a source <a
+href="../Sources/CSV.html#M000189">Sources::CSV.new</a>(:title,
+file:&#8217;some_file.csv&#8217;) but you want the category to be called
+differently. The you use from: <a
+href="Base.html#M000026">define_category</a>(:similar_title, :from =>
+:title).
+
+</li>
+</ul>
 
                 </div>
                 
                 
+                <div class="aka">
+                    This method is also aliased as
+                    
+                    <a href="Base.html#M000026">define_category</a>
+                    
+                </div>
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000025_source')" id="l_M000025_source">show</a>
+                        
+                        | <a href="http://github.com/floere/picky/blob/50c9e0e72c2e4dbaf194b937a37cf30cea1f308e/server/lib/picky/index/base.rb#L159" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000025_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 159</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">category</span> <span class="ruby-identifier">category_name</span>, <span class="ruby-identifier">options</span> = {}
+      <span class="ruby-identifier">category_name</span> = <span class="ruby-identifier">category_name</span>.<span class="ruby-identifier">to_sym</span>
+
+      <span class="ruby-identifier">indexing_category</span> = <span class="ruby-identifier">internal_indexing</span>.<span class="ruby-identifier">define_category</span> <span class="ruby-identifier">category_name</span>, <span class="ruby-identifier">options</span>
+      <span class="ruby-identifier">indexed_category</span>  = <span class="ruby-identifier">internal_indexed</span>.<span class="ruby-identifier">define_category</span>  <span class="ruby-identifier">category_name</span>, <span class="ruby-identifier">options</span>
+
+      <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">indexing_category</span>, <span class="ruby-identifier">indexed_category</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+
+      <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
                 
             </div>
             
@@ -372,102 +448,81 @@ Since this is an API, we fail hard quickly.
             </div>
             
             <div class="method">
-                <div class="title" id="M000025">
+                <div class="title" id="M000026">
                     
-                    <a name="M000025"></a><b>define_category</b>(category_name, options = {})
+                    <a name="M000026"></a><b>define_category</b>(category_name, options = {})
                     
                 </div>
                 
                 <div class="description">
                   <p>
-Defines a searchable category on the index.
+Alias for <a href="Base.html#M000025">category</a>
 </p>
-<h3>Parameters</h3>
-<ul>
-<li>category_name: This identifier is used in the front end, but also to
-categorize query text. For example, “title:hobbit” will narrow the
-hobbit query on categories with the identifier :title.
-
-</li>
-</ul>
-<h3>Options</h3>
-<ul>
-<li>partial: Partial::None.new or Partial::Substring.new(from: starting_char,
-to: ending_char). Default is Partial::Substring.new(from: -3, to: -1).
-
-</li>
-<li>similarity: Similarity::None.new or
-Similarity::DoubleMetaphone.new(similar_words_searched). Default is
-Similarity::None.new.
-
-</li>
-<li>qualifiers: An array of qualifiers with which you can define which category
-you’d like to search, for example “title:hobbit” will search for
-hobbit in just title categories. Example: qualifiers: [:t, :titre, :title]
-(use it for example with multiple languages). Default is the name of the
-category.
-
-</li>
-<li>qualifier: Convenience options if you just need a single qualifier, see
-above. Example: qualifiers => :title. Default is the name of the category.
-
-</li>
-<li>source: Use a different source than the index uses. If you think you need
-that, there might be a better solution to your problem. Please post to the
-mailing list first with your application.rb :)
-
-</li>
-<li>from: Take the data from the data category with this name. Example: You
-have a source <a
-href="../Sources/CSV.html#M000189">Sources::CSV.new</a>(:title,
-file:&#8217;some_file.csv&#8217;) but you want the category to be called
-differently. The you use from: <a
-href="Base.html#M000025">define_category</a>(:similar_title, :from =>
-:title).
-
-</li>
-</ul>
 
                 </div>
                 
                 
-                <div class="aka">
-                    This method is also aliased as
-                    
-                    <a href="Base.html#M000026">category</a>
-                    
-                </div>
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000025_source')" id="l_M000025_source">show</a>
-                        
-                        | <a href="http://github.com/floere/picky/blob/50c9e0e72c2e4dbaf194b937a37cf30cea1f308e/server/lib/picky/index/base.rb#L159" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000025_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 159</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define_category</span> <span class="ruby-identifier">category_name</span>, <span class="ruby-identifier">options</span> = {}
-      <span class="ruby-identifier">category_name</span> = <span class="ruby-identifier">category_name</span>.<span class="ruby-identifier">to_sym</span>
-
-      <span class="ruby-identifier">indexing_category</span> = <span class="ruby-identifier">internal_indexing</span>.<span class="ruby-identifier">define_category</span> <span class="ruby-identifier">category_name</span>, <span class="ruby-identifier">options</span>
-      <span class="ruby-identifier">indexed_category</span>  = <span class="ruby-identifier">internal_indexed</span>.<span class="ruby-identifier">define_category</span>  <span class="ruby-identifier">category_name</span>, <span class="ruby-identifier">options</span>
-
-      <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">indexing_category</span>, <span class="ruby-identifier">indexed_category</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
-
-      <span class="ruby-keyword kw">self</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
                 
             </div>
             
             <div class="method">
-                <div class="title" id="M000020">
+                <div class="title" id="M000022">
                     
-                    <a name="M000020"></a><b>define_indexing</b>(options = {})
+                    <a name="M000022"></a><b>define_indexing</b>(options = {})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Alias for <a href="Base.html#M000021">indexing</a>
+</p>
+
+                </div>
+                
+                
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000028">
+                    
+                    <a name="M000028"></a><b>define_ranged_category</b>(category_name, range, options = {})
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Alias for <a href="Base.html#M000027">ranged_category</a>
+</p>
+
+                </div>
+                
+                
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000024">
+                    
+                    <a name="M000024"></a><b>define_source</b>(source)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Alias for <a href="Base.html#M000023">source</a>
+</p>
+
+                </div>
+                
+                
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000021">
+                    
+                    <a name="M000021"></a><b>indexing</b>(options = {})
                     
                 </div>
                 
@@ -476,7 +531,7 @@ href="Base.html#M000025">define_category</a>(:similar_title, :from =>
 Define an index tokenizer on the index.
 </p>
 <p>
-Parameters are the exact same as for the default_indexing.
+Parameters are the exact same as for indexing.
 </p>
 
                 </div>
@@ -485,7 +540,7 @@ Parameters are the exact same as for the default_indexing.
                 <div class="aka">
                     This method is also aliased as
                     
-                    <a href="Base.html#M000021">indexing</a>
+                    <a href="Base.html#M000022">define_indexing</a>
                     
                 </div>
                 
@@ -493,15 +548,69 @@ Parameters are the exact same as for the default_indexing.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000020_source')" id="l_M000020_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000021_source')" id="l_M000021_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/50c9e0e72c2e4dbaf194b937a37cf30cea1f308e/server/lib/picky/index/base.rb#L130" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000020_source" class="dyn-source">
+                    <div id="M000021_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 130</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define_indexing</span> <span class="ruby-identifier">options</span> = {}
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">indexing</span> <span class="ruby-identifier">options</span> = {}
       <span class="ruby-identifier">internal_indexing</span>.<span class="ruby-identifier">define_indexing</span> <span class="ruby-identifier">options</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000015">
+                    
+                    <a name="M000015"></a><b>internal_indexed</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000015_source')" id="l_M000015_source">show</a>
+                        
+                        | <a href="http://github.com/floere/picky/blob/50c9e0e72c2e4dbaf194b937a37cf30cea1f308e/server/lib/picky/index/base.rb#L57" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000015_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 57</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">internal_indexed</span>
+      <span class="ruby-ivar">@indexed</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000014">
+                    
+                    <a name="M000014"></a><b>internal_indexing</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000014_source')" id="l_M000014_source">show</a>
+                        
+                        | <a href="http://github.com/floere/picky/blob/50c9e0e72c2e4dbaf194b937a37cf30cea1f308e/server/lib/picky/index/base.rb#L54" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000014_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 54</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">internal_indexing</span>
+      <span class="ruby-ivar">@indexing</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
@@ -511,7 +620,7 @@ Parameters are the exact same as for the default_indexing.
             <div class="method">
                 <div class="title" id="M000027">
                     
-                    <a name="M000027"></a><b>define_ranged_category</b>(category_name, range, options = {})
+                    <a name="M000027"></a><b>ranged_category</b>(category_name, range, options = {})
                     
                 </div>
                 
@@ -590,7 +699,7 @@ Or go crazy and use 4 ranged categories for a space/time search! ;)
 <h3>Parameters</h3>
 <ul>
 <li>category_name: The category_name as used in <a
-href="Base.html#M000025">define_category</a>.
+href="Base.html#M000026">define_category</a>.
 
 </li>
 <li>range: The range (in the units of your data values) around the query point
@@ -607,7 +716,7 @@ where we search for results.
 margin, slower) makes sense.
 
 </li>
-<li>&#8230; all options of <a href="Base.html#M000025">define_category</a>.
+<li>&#8230; all options of <a href="Base.html#M000026">define_category</a>.
 
 </li>
 </ul>
@@ -618,7 +727,7 @@ margin, slower) makes sense.
                 <div class="aka">
                     This method is also aliased as
                     
-                    <a href="Base.html#M000028">ranged_category</a>
+                    <a href="Base.html#M000028">define_ranged_category</a>
                     
                 </div>
                 
@@ -633,7 +742,7 @@ margin, slower) makes sense.
                     </p>
                     <div id="M000027_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 230</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define_ranged_category</span> <span class="ruby-identifier">category_name</span>, <span class="ruby-identifier">range</span>, <span class="ruby-identifier">options</span> = {}
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ranged_category</span> <span class="ruby-identifier">category_name</span>, <span class="ruby-identifier">range</span>, <span class="ruby-identifier">options</span> = {}
       <span class="ruby-identifier">precision</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:precision</span>] <span class="ruby-operator">||</span> <span class="ruby-value">1</span>
 
       <span class="ruby-identifier">options</span> = { <span class="ruby-identifier">partial</span><span class="ruby-operator">:</span> <span class="ruby-constant">Partial</span><span class="ruby-operator">::</span><span class="ruby-constant">None</span>.<span class="ruby-identifier">new</span> }.<span class="ruby-identifier">merge</span> <span class="ruby-identifier">options</span>
@@ -649,9 +758,9 @@ margin, slower) makes sense.
             </div>
             
             <div class="method">
-                <div class="title" id="M000022">
+                <div class="title" id="M000023">
                     
-                    <a name="M000022"></a><b>define_source</b>(source)
+                    <a name="M000023"></a><b>source</b>(source)
                     
                 </div>
                 
@@ -671,7 +780,7 @@ category names (or the category from option).
                 <div class="aka">
                     This method is also aliased as
                     
-                    <a href="Base.html#M000023">source</a>
+                    <a href="Base.html#M000024">define_source</a>
                     
                 </div>
                 
@@ -679,126 +788,18 @@ category names (or the category from option).
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000022_source')" id="l_M000022_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000023_source')" id="l_M000023_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/50c9e0e72c2e4dbaf194b937a37cf30cea1f308e/server/lib/picky/index/base.rb#L141" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000022_source" class="dyn-source">
+                    <div id="M000023_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 141</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define_source</span> <span class="ruby-identifier">source</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">source</span> <span class="ruby-identifier">source</span>
       <span class="ruby-identifier">internal_indexing</span>.<span class="ruby-identifier">define_source</span> <span class="ruby-identifier">source</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000021">
-                    
-                    <a name="M000021"></a><b>indexing</b>(options = {})
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Alias for <a href="Base.html#M000020">define_indexing</a>
-</p>
-
-                </div>
-                
-                
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000015">
-                    
-                    <a name="M000015"></a><b>internal_indexed</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000015_source')" id="l_M000015_source">show</a>
-                        
-                        | <a href="http://github.com/floere/picky/blob/50c9e0e72c2e4dbaf194b937a37cf30cea1f308e/server/lib/picky/index/base.rb#L57" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000015_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 57</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">internal_indexed</span>
-      <span class="ruby-ivar">@indexed</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000014">
-                    
-                    <a name="M000014"></a><b>internal_indexing</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000014_source')" id="l_M000014_source">show</a>
-                        
-                        | <a href="http://github.com/floere/picky/blob/50c9e0e72c2e4dbaf194b937a37cf30cea1f308e/server/lib/picky/index/base.rb#L54" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000014_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 54</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">internal_indexing</span>
-      <span class="ruby-ivar">@indexing</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000028">
-                    
-                    <a name="M000028"></a><b>ranged_category</b>(category_name, range, options = {})
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Alias for <a href="Base.html#M000027">define_ranged_category</a>
-</p>
-
-                </div>
-                
-                
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000023">
-                    
-                    <a name="M000023"></a><b>source</b>(source)
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Alias for <a href="Base.html#M000022">define_source</a>
-</p>
-
-                </div>
-                
-                
                 
             </div>
             

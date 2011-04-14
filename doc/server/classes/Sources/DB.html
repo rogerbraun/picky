@@ -71,11 +71,11 @@ Examples:
         <dd>
             <ul>
                 
-                <li><a href="#M000206">chunksize</a>,</li>
+                <li><a href="#M000211">chunksize</a>,</li>
                 
                 <li><a href="#M000198">connect_backend</a>,</li>
                 
-                <li><a href="#M000200">count</a></li>
+                <li><a href="#M000205">count</a></li>
                 
             </ul>
         </dd>
@@ -84,11 +84,11 @@ Examples:
         <dd>
             <ul>
                 
-                <li><a href="#M000202">harvest</a>,</li>
+                <li><a href="#M000207">harvest</a>,</li>
                 
-                <li><a href="#M000205">harvest_statement</a>,</li>
+                <li><a href="#M000210">harvest_statement</a>,</li>
                 
-                <li><a href="#M000204">harvest_statement_with_offset</a></li>
+                <li><a href="#M000209">harvest_statement_with_offset</a></li>
                 
             </ul>
         </dd>
@@ -106,7 +106,7 @@ Examples:
         <dd>
             <ul>
                 
-                <li><a href="#M000201">snapshot_table_name</a></li>
+                <li><a href="#M000206">snapshot_table_name</a></li>
                 
             </ul>
         </dd>
@@ -115,7 +115,7 @@ Examples:
         <dd>
             <ul>
                 
-                <li><a href="#M000199">take_snapshot</a>,</li>
+                <li><a href="#M000204">take_snapshot</a>,</li>
                 
                 <li><a href="#M000195">to_s</a></li>
                 
@@ -217,9 +217,9 @@ the given file.
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000206">
+                <div class="title" id="M000211">
                     
-                    <a name="M000206"></a><b>chunksize</b>()
+                    <a name="M000211"></a><b>chunksize</b>()
                     
                 </div>
                 
@@ -235,12 +235,12 @@ The amount of records that are loaded each chunk.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000206_source')" id="l_M000206_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000211_source')" id="l_M000211_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/sources/db.rb#L174" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000206_source" class="dyn-source">
+                    <div id="M000211_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/sources/db.rb, line 174</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">chunksize</span>
       <span class="ruby-value">25_000</span>
@@ -290,9 +290,9 @@ Will raise unless connection options have been given.
             </div>
             
             <div class="method">
-                <div class="title" id="M000200">
+                <div class="title" id="M000205">
                     
-                    <a name="M000200"></a><b>count</b>(index)
+                    <a name="M000205"></a><b>count</b>(index)
                     
                 </div>
                 
@@ -308,12 +308,12 @@ Counts all the entries that are used for the index.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000200_source')" id="l_M000200_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000205_source')" id="l_M000205_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/sources/db.rb#L112" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000200_source" class="dyn-source">
+                    <div id="M000205_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/sources/db.rb, line 112</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">count</span> <span class="ruby-identifier">index</span>
       <span class="ruby-identifier">connect_backend</span>
@@ -326,9 +326,9 @@ Counts all the entries that are used for the index.
             </div>
             
             <div class="method">
-                <div class="title" id="M000202">
+                <div class="title" id="M000207">
                     
-                    <a name="M000202"></a><b>harvest</b>(category, &amp;block)
+                    <a name="M000207"></a><b>harvest</b>(category, &amp;block)
                     
                 </div>
                 
@@ -344,12 +344,12 @@ Harvests the data to index in chunks.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000202_source')" id="l_M000202_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000207_source')" id="l_M000207_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/sources/db.rb#L126" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000202_source" class="dyn-source">
+                    <div id="M000207_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/sources/db.rb, line 126</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest</span> <span class="ruby-identifier">category</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
       <span class="ruby-identifier">connect_backend</span>
@@ -364,9 +364,9 @@ Harvests the data to index in chunks.
             </div>
             
             <div class="method">
-                <div class="title" id="M000205">
+                <div class="title" id="M000210">
                     
-                    <a name="M000205"></a><b>harvest_statement</b>(category)
+                    <a name="M000210"></a><b>harvest_statement</b>(category)
                     
                 </div>
                 
@@ -382,12 +382,12 @@ The harvest statement used to pull data from the snapshot table.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000205_source')" id="l_M000205_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000210_source')" id="l_M000210_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/sources/db.rb#L168" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000205_source" class="dyn-source">
+                    <div id="M000210_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/sources/db.rb, line 168</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_statement</span> <span class="ruby-identifier">category</span>
       <span class="ruby-node">&quot;SELECT id, #{category.from} FROM #{snapshot_table_name(category.index)} st&quot;</span>
@@ -398,9 +398,9 @@ The harvest statement used to pull data from the snapshot table.
             </div>
             
             <div class="method">
-                <div class="title" id="M000204">
+                <div class="title" id="M000209">
                     
-                    <a name="M000204"></a><b>harvest_statement_with_offset</b>(category, offset)
+                    <a name="M000209"></a><b>harvest_statement_with_offset</b>(category, offset)
                     
                 </div>
                 
@@ -416,12 +416,12 @@ Builds a harvest statement for getting data to index.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000204_source')" id="l_M000204_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000209_source')" id="l_M000209_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/sources/db.rb#L158" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000204_source" class="dyn-source">
+                    <div id="M000209_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/sources/db.rb, line 158</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest_statement_with_offset</span> <span class="ruby-identifier">category</span>, <span class="ruby-identifier">offset</span>
       <span class="ruby-identifier">statement</span> = <span class="ruby-identifier">harvest_statement</span> <span class="ruby-identifier">category</span>
@@ -436,9 +436,9 @@ Builds a harvest statement for getting data to index.
             </div>
             
             <div class="method">
-                <div class="title" id="M000201">
+                <div class="title" id="M000206">
                     
-                    <a name="M000201"></a><b>snapshot_table_name</b>(index)
+                    <a name="M000206"></a><b>snapshot_table_name</b>(index)
                     
                 </div>
                 
@@ -454,12 +454,12 @@ The name of the snapshot table created by Picky.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000201_source')" id="l_M000201_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000206_source')" id="l_M000206_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/sources/db.rb#L120" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000201_source" class="dyn-source">
+                    <div id="M000206_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/sources/db.rb, line 120</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">snapshot_table_name</span> <span class="ruby-identifier">index</span>
       <span class="ruby-node">&quot;picky_#{index.name}_index&quot;</span>
@@ -470,9 +470,9 @@ The name of the snapshot table created by Picky.
             </div>
             
             <div class="method">
-                <div class="title" id="M000199">
+                <div class="title" id="M000204">
                     
-                    <a name="M000199"></a><b>take_snapshot</b>(index)
+                    <a name="M000204"></a><b>take_snapshot</b>(index)
                     
                 </div>
                 
@@ -492,12 +492,12 @@ of the data.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000199_source')" id="l_M000199_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000204_source')" id="l_M000204_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/sources/db.rb#L87" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000199_source" class="dyn-source">
+                    <div id="M000204_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/sources/db.rb, line 87</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">take_snapshot</span> <span class="ruby-identifier">index</span>
       <span class="ruby-identifier">connect_backend</span>
