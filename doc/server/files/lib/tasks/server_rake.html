@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>lib/tasks/server.rake</li>
-            <li>Last modified: 2011-03-12 03:08:03 +0100</li>
+            <li>Last modified: 2011-04-05 19:03:51 +1000</li>
         </ul>
     </div>
 
@@ -28,19 +28,11 @@
     
     <div class="description">
         <p>
-# TODO This file needs some love. # namespace :server do
+# Server tasks, like starting/stopping/restarting. # namespace :server do
 </p>
 <pre>
-  def chdir_to_root
-    Dir.chdir PICKY_ROOT
-  end
-
-  def current_pid
-    pid = `cat #{File.join(PICKY_ROOT, 'tmp/pids/unicorn.pid')}`
-    pid.blank? ? nil : pid.chomp
-  end
-
   # desc &quot;Start the unicorns. (Wehee!)&quot;
+  #
   task :start =&gt; :framework do
     chdir_to_root
     daemonize = PICKY_ENVIRONMENT == 'production' ? '-D' : ''
@@ -50,6 +42,7 @@
   end
 
   # desc &quot;Stop the unicorns. (Blam!)&quot;
+  #
   task :stop =&gt; :framework do
     `kill -QUIT #{current_pid}` if current_pid
   end
@@ -59,6 +52,15 @@
     Rake::Task[:&quot;server:stop&quot;].invoke
     sleep 5
     Rake::Task[:&quot;server:start&quot;].invoke
+  end
+
+  def chdir_to_root
+    Dir.chdir PICKY_ROOT
+  end
+
+  def current_pid
+    pid = `cat #{File.join(PICKY_ROOT, 'tmp/pids/unicorn.pid')}`
+    pid.blank? ? nil : pid.chomp
   end
 </pre>
 <p>

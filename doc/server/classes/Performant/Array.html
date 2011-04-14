@@ -39,8 +39,7 @@
 include &#8220;ruby.h&#8220;
 </p>
 <p>
-// Copying internal ruby methods. // static inline VALUE rb_ary_elt(ary,
-offset)
+// Copying internal ruby methods. // inline VALUE rb_ary_elt(ary, offset)
 </p>
 <pre>
     VALUE ary;
@@ -57,7 +56,7 @@ offset)
     return RARRAY_PTR(ary)[offset];
 </pre>
 <p>
-} static VALUE ary_make_hash(ary1, ary2)
+} inline VALUE ary_make_hash(ary1, ary2)
 </p>
 <pre>
     VALUE ary1, ary2;
@@ -80,13 +79,19 @@ offset)
     return hash;
 </pre>
 <p>
+} inline VALUE rb_ary_length(VALUE ary) {
+</p>
+<pre>
+  long length = RARRAY_LEN(ary);
+  return LONG2NUM(length);
+</pre>
+<p>
 }
 </p>
 <p>
-// This version just calls the &amp; consecutively for all arrays. // //
-The arrays need to be pre-sorted small to large. // inline VALUE
-memory_efficient_intersect(VALUE self, VALUE length_sorted_array_of_arrays)
-{
+// This version: // * orders the arrays by ascending size, small to large.
+// * calls the &amp; consecutively for all arrays. // inline VALUE
+memory_efficient_intersect(VALUE self, VALUE unsorted_array_of_arrays) {
 </p>
 <pre>
   // Counters.
@@ -104,15 +109,16 @@ memory_efficient_intersect(VALUE self, VALUE length_sorted_array_of_arrays)
   //
   VALUE v, vv;
 
-  // Conversions.
+  // Conversions &amp; presorting.
   //
-  rb_array_of_arrays = RARRAY(length_sorted_array_of_arrays);
+  rb_array_of_arrays = rb_block_call(unsorted_array_of_arrays, rb_intern(&quot;sort_by!&quot;), 0, 0, rb_ary_length, 0);
   smallest_array     = (VALUE) RARRAY(rb_ary_dup(RARRAY_PTR(rb_array_of_arrays)[0]));
 
   // Iterate through all arrays.
   //
   for (i = 1; i &lt; RARRAY_LEN(rb_array_of_arrays); i++) {
     // Break if the smallest array is empty
+    //
     if (RARRAY_LEN(smallest_array) == 0) {
       break;
     }

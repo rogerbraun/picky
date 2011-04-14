@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>lib/tasks/try.rake</li>
-            <li>Last modified: 2011-03-13 10:14:33 +0100</li>
+            <li>Last modified: 2011-03-22 02:43:08 +1100</li>
         </ul>
     </div>
 
@@ -35,7 +35,7 @@
   task :index, [:text, :index, :category] =&gt; :application do |_, options|
     text, index, category = options.text, options.index, options.category
 
-    tokenizer = index &amp;&amp; category ? Indexes.find(index, category).tokenizer : Internals::Tokenizers::Index.default
+    tokenizer = category ? Indexes.find(index, category).tokenizer : Internals::Tokenizers::Index.default
 
     puts &quot;\&quot;#{text}\&quot; is saved in the index as             #{tokenizer.tokenize(text.dup).to_a}&quot;
   end
@@ -50,6 +50,9 @@
   # desc &quot;Try the given text with both the index and the query (type:category optional).&quot;
   task :both, [:text, :index, :category] =&gt; :application do |_, options|
     text, index, category = options.text, options.index, options.category
+
+    puts
+    fail &quot;\x1b[31mrake try needs a text to try indexing and query preparation\x1b[m, e.g. rake 'try[yourtext]'.&quot; unless text
 
     Rake::Task[:&quot;try:index&quot;].invoke text, index, category
     Rake::Task[:&quot;try:query&quot;].invoke text
