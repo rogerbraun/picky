@@ -70,7 +70,7 @@ Important Note: This will only work in Master/Child configurations.
         <dd>
             <ul>
                 
-                <li><a href="#M000046">extract_configuration</a></li>
+                <li><a href="#M000045">extract_configuration</a></li>
                 
             </ul>
         </dd>
@@ -117,17 +117,17 @@ Important Note: This will only work in Master/Child configurations.
         <dd>
             <ul>
                 
-                <li><a href="#M000047">querying_removes_characters</a>,</li>
+                <li><a href="#M000046">querying_removes_characters</a>,</li>
                 
-                <li><a href="#M000048">querying_removes_characters=</a>,</li>
+                <li><a href="#M000047">querying_removes_characters=</a>,</li>
                 
-                <li><a href="#M000051">querying_splits_text_on</a>,</li>
+                <li><a href="#M000050">querying_splits_text_on</a>,</li>
                 
-                <li><a href="#M000052">querying_splits_text_on=</a>,</li>
+                <li><a href="#M000051">querying_splits_text_on=</a>,</li>
                 
-                <li><a href="#M000049">querying_stopwords</a>,</li>
+                <li><a href="#M000048">querying_stopwords</a>,</li>
                 
-                <li><a href="#M000050">querying_stopwords=</a></li>
+                <li><a href="#M000049">querying_stopwords=</a></li>
                 
             </ul>
         </dd>
@@ -154,7 +154,7 @@ Important Note: This will only work in Master/Child configurations.
         <dd>
             <ul>
                 
-                <li><a href="#M000053">to_s</a>,</li>
+                <li><a href="#M000052">to_s</a>,</li>
                 
                 <li><a href="#M000044">try_updating_configuration_with</a></li>
                 
@@ -260,9 +260,9 @@ Close the child if it isn&#8217;t yet closed.
             </div>
             
             <div class="method">
-                <div class="title" id="M000046">
+                <div class="title" id="M000045">
                     
-                    <a name="M000046"></a><b>extract_configuration</b>()
+                    <a name="M000045"></a><b>extract_configuration</b>()
                     
                 </div>
                 
@@ -271,12 +271,12 @@ Close the child if it isn&#8217;t yet closed.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000046_source')" id="l_M000046_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000045_source')" id="l_M000045_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L133" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000046_source" class="dyn-source">
+                    <div id="M000045_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/interfaces/live_parameters.rb, line 133</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_configuration</span>
       {
@@ -448,9 +448,9 @@ parent process
             </div>
             
             <div class="method">
-                <div class="title" id="M000047">
+                <div class="title" id="M000046">
                     
-                    <a name="M000047"></a><b>querying_removes_characters</b>()
+                    <a name="M000046"></a><b>querying_removes_characters</b>()
                     
                 </div>
                 
@@ -466,12 +466,12 @@ TODO Move to Interface object.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000047_source')" id="l_M000047_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000046_source')" id="l_M000046_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L143" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000047_source" class="dyn-source">
+                    <div id="M000046_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/interfaces/live_parameters.rb, line 143</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">querying_removes_characters</span>
       <span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">default</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">:@removes_characters_regexp</span>).<span class="ruby-identifier">source</span>
@@ -482,9 +482,9 @@ TODO Move to Interface object.
             </div>
             
             <div class="method">
-                <div class="title" id="M000048">
+                <div class="title" id="M000047">
                     
-                    <a name="M000048"></a><b>querying_removes_characters=</b>(new_value)
+                    <a name="M000047"></a><b>querying_removes_characters=</b>(new_value)
                     
                 </div>
                 
@@ -493,12 +493,12 @@ TODO Move to Interface object.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000048_source')" id="l_M000048_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000047_source')" id="l_M000047_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L146" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000048_source" class="dyn-source">
+                    <div id="M000047_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/interfaces/live_parameters.rb, line 146</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">querying_removes_characters=</span> <span class="ruby-identifier">new_value</span>
       <span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">default</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-identifier">:@removes_characters_regexp</span>, <span class="ruby-node">%r{#{new_value}}</span>)
@@ -509,90 +509,9 @@ TODO Move to Interface object.
             </div>
             
             <div class="method">
-                <div class="title" id="M000051">
-                    
-                    <a name="M000051"></a><b>querying_splits_text_on</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000051_source')" id="l_M000051_source">show</a>
-                        
-                        | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L155" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000051_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/interfaces/live_parameters.rb, line 155</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">querying_splits_text_on</span>
-      <span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">default</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">:@splits_text_on_regexp</span>).<span class="ruby-identifier">source</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000052">
-                    
-                    <a name="M000052"></a><b>querying_splits_text_on=</b>(new_value)
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000052_source')" id="l_M000052_source">show</a>
-                        
-                        | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L158" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000052_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/interfaces/live_parameters.rb, line 158</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">querying_splits_text_on=</span> <span class="ruby-identifier">new_value</span>
-      <span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">default</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-identifier">:@splits_text_on_regexp</span>, <span class="ruby-node">%r{#{new_value}}</span>)
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000049">
-                    
-                    <a name="M000049"></a><b>querying_stopwords</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000049_source')" id="l_M000049_source">show</a>
-                        
-                        | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L149" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000049_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/interfaces/live_parameters.rb, line 149</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">querying_stopwords</span>
-      <span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">default</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">:@remove_stopwords_regexp</span>).<span class="ruby-identifier">source</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
                 <div class="title" id="M000050">
                     
-                    <a name="M000050"></a><b>querying_stopwords=</b>(new_value)
+                    <a name="M000050"></a><b>querying_splits_text_on</b>()
                     
                 </div>
                 
@@ -603,10 +522,91 @@ TODO Move to Interface object.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000050_source')" id="l_M000050_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L152" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L155" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000050_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/picky/interfaces/live_parameters.rb, line 155</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">querying_splits_text_on</span>
+      <span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">default</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">:@splits_text_on_regexp</span>).<span class="ruby-identifier">source</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000051">
+                    
+                    <a name="M000051"></a><b>querying_splits_text_on=</b>(new_value)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000051_source')" id="l_M000051_source">show</a>
+                        
+                        | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L158" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000051_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/picky/interfaces/live_parameters.rb, line 158</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">querying_splits_text_on=</span> <span class="ruby-identifier">new_value</span>
+      <span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">default</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-identifier">:@splits_text_on_regexp</span>, <span class="ruby-node">%r{#{new_value}}</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000048">
+                    
+                    <a name="M000048"></a><b>querying_stopwords</b>()
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000048_source')" id="l_M000048_source">show</a>
+                        
+                        | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L149" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000048_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/picky/interfaces/live_parameters.rb, line 149</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">querying_stopwords</span>
+      <span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">default</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">:@remove_stopwords_regexp</span>).<span class="ruby-identifier">source</span>
+    <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000049">
+                    
+                    <a name="M000049"></a><b>querying_stopwords=</b>(new_value)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000049_source')" id="l_M000049_source">show</a>
+                        
+                        | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L152" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000049_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/interfaces/live_parameters.rb, line 152</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">querying_stopwords=</span> <span class="ruby-identifier">new_value</span>
       <span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">default</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-identifier">:@remove_stopwords_regexp</span>, <span class="ruby-node">%r{#{new_value}}</span>)
@@ -701,9 +701,9 @@ This runs a thread that listens to child processes.
             </div>
             
             <div class="method">
-                <div class="title" id="M000053">
+                <div class="title" id="M000052">
                     
-                    <a name="M000053"></a><b>to_s</b>()
+                    <a name="M000052"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -712,12 +712,12 @@ This runs a thread that listens to child processes.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000053_source')" id="l_M000053_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000052_source')" id="l_M000052_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/64dab00d2d4890edac2ae9ab786d9c32e829ea0f/server/lib/picky/interfaces/live_parameters.rb#L164" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000053_source" class="dyn-source">
+                    <div id="M000052_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/interfaces/live_parameters.rb, line 164</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
       <span class="ruby-value str">&quot;Suckerfish Live Interface (Use the picky-live gem to introspect)&quot;</span>
