@@ -32,6 +32,109 @@
     <div id="bodyContent">
         <div id="content">
     
+    <div class="description">
+        <h1>Picky Indexes</h1>
+<p>
+A Picky <a href="Index.html">Index</a> defines
+</p>
+<ul>
+<li>where its data comes from (a data source).
+
+</li>
+<li>how this data it is indexed.
+
+</li>
+<li>a number of categories that may or may not map directly to data categories.
+
+</li>
+</ul>
+<p>
+This is a step-by-step description on how to create an index.
+</p>
+<p>
+Start by choosing an <tt>Index::Memory</tt> or an <tt>Index::Redis</tt>. In
+the example, we will be using an in-memory index, <tt>Index::Memory</tt>.
+</p>
+<pre>
+  books = Index::Memory.new(:books)
+</pre>
+<p>
+That in itself won&#8217;t do much good, that&#8217;s why we add a data
+source:
+</p>
+<pre>
+  books = Index::Memory.new(:books) do
+    source Sources::CSV.new(:title, :author, file: 'data/books.csv')
+  end
+</pre>
+<p>
+In the example, we use an explicit <tt>Sources::CSV</tt> of Picky. However,
+anything that responds to each, and returns an object that answers to id,
+works.
+</p>
+<p>
+For example, a 3.0 ActiveRecord class:
+</p>
+<pre>
+  books = Index::Memory.new(:books) do
+    source Book.order('isbn ASC')
+  end
+</pre>
+<p>
+Now we know where the data comes from, but not, how to categorize it.
+</p>
+<p>
+Let&#8217;s add a few categories:
+</p>
+<pre>
+  books = Index::Memory.new(:books) do
+    source   Book.order('isbn ASC')
+    category :title
+    category :author
+    category :isbn
+  end
+</pre>
+<p>
+Categories offer quite a few options, see <tt><a
+href="Index/Base.html#M000027">Index::Base#category</a></tt> for details.
+</p>
+<p>
+After adding more options, it might look like this:
+</p>
+<pre>
+  books = Index::Memory.new(:books) do
+    source   Book.order('isbn ASC')
+    category :title,
+             partial: Partial::Substring.new(from: 1),
+             similarity: Similarity::DoubleMetaphone.new(3),
+             qualifiers: [:t, :title, :titulo]
+    category :author,
+             similarity: Similarity::Metaphone.new(2)
+    category :isbn,
+             partial: Partial::None.new,
+             from: :legacy_isbn_name
+  end
+</pre>
+<p>
+For this to work, a Book should support methods title, author and
+legacy_isbn_name.
+</p>
+<p>
+If it uses <tt>String</tt> ids, use key_format to define a formatting
+method:
+</p>
+<pre>
+  books = Index::Memory.new(:books) do
+    key_format :to_s
+    source     Book.order('isbn ASC')
+    category   :title
+    category   :author
+    category   :isbn
+  end
+</pre>
+
+    </div>
+    
 
     
 

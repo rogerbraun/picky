@@ -43,7 +43,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000145">category_name</a></li>
+                <li><a href="#M000142">category_name</a></li>
                 
             </ul>
         </dd>
@@ -52,13 +52,13 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000149">identifier</a>,</li>
+                <li><a href="#M000146">identifier</a>,</li>
                 
-                <li><a href="#M000151">index_directory</a>,</li>
+                <li><a href="#M000148">index_directory</a>,</li>
                 
-                <li><a href="#M000144">index_name</a>,</li>
+                <li><a href="#M000141">index_name</a>,</li>
                 
-                <li><a href="#M000146">index_path</a></li>
+                <li><a href="#M000143">index_path</a></li>
                 
             </ul>
         </dd>
@@ -67,11 +67,11 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000152">prepare_index_directory</a>,</li>
+                <li><a href="#M000149">prepare_index_directory</a>,</li>
                 
-                <li><a href="#M000148">prepared_index_file</a>,</li>
+                <li><a href="#M000145">prepared_index_file</a>,</li>
                 
-                <li><a href="#M000147">prepared_index_path</a></li>
+                <li><a href="#M000144">prepared_index_path</a></li>
                 
             </ul>
         </dd>
@@ -80,7 +80,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000150">to_s</a></li>
+                <li><a href="#M000147">to_s</a></li>
                 
             </ul>
         </dd>
@@ -102,9 +102,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000145">
+                <div class="title" id="M000142">
                     
-                    <a name="M000145"></a><b>category_name</b>()
+                    <a name="M000142"></a><b>category_name</b>()
                     
                 </div>
                 
@@ -113,12 +113,12 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000145_source')" id="l_M000145_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000142_source')" id="l_M000142_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/9fe8c8646454bdf97a9ad830685785f1d71d507c/server/lib/picky/internals/shared/category.rb#L9" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000145_source" class="dyn-source">
+                    <div id="M000142_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/internals/shared/category.rb, line 9</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">category_name</span>
         <span class="ruby-identifier">name</span>
@@ -129,9 +129,9 @@
             </div>
             
             <div class="method">
-                <div class="title" id="M000149">
+                <div class="title" id="M000146">
                     
-                    <a name="M000149"></a><b>identifier</b>()
+                    <a name="M000146"></a><b>identifier</b>()
                     
                 </div>
                 
@@ -147,12 +147,12 @@ Identifier for internal use.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000149_source')" id="l_M000149_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000146_source')" id="l_M000146_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/9fe8c8646454bdf97a9ad830685785f1d71d507c/server/lib/picky/internals/shared/category.rb#L31" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000149_source" class="dyn-source">
+                    <div id="M000146_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/internals/shared/category.rb, line 31</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">identifier</span>
         <span class="ruby-ivar">@identifier</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;#{index.name}:#{name}&quot;</span>
@@ -163,9 +163,9 @@ Identifier for internal use.
             </div>
             
             <div class="method">
-                <div class="title" id="M000151">
+                <div class="title" id="M000148">
                     
-                    <a name="M000151"></a><b>index_directory</b>()
+                    <a name="M000148"></a><b>index_directory</b>()
                     
                 </div>
                 
@@ -181,12 +181,12 @@ The index directory for this category.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000151_source')" id="l_M000151_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000148_source')" id="l_M000148_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/9fe8c8646454bdf97a9ad830685785f1d71d507c/server/lib/picky/internals/shared/category.rb#L40" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000151_source" class="dyn-source">
+                    <div id="M000148_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/internals/shared/category.rb, line 40</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index_directory</span>
         <span class="ruby-ivar">@index_directory</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;#{PICKY_ROOT}/index/#{PICKY_ENVIRONMENT}/#{index.name}&quot;</span>
@@ -197,9 +197,9 @@ The index directory for this category.
             </div>
             
             <div class="method">
-                <div class="title" id="M000144">
+                <div class="title" id="M000141">
                     
-                    <a name="M000144"></a><b>index_name</b>()
+                    <a name="M000141"></a><b>index_name</b>()
                     
                 </div>
                 
@@ -208,12 +208,12 @@ The index directory for this category.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000144_source')" id="l_M000144_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000141_source')" id="l_M000141_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/9fe8c8646454bdf97a9ad830685785f1d71d507c/server/lib/picky/internals/shared/category.rb#L6" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000144_source" class="dyn-source">
+                    <div id="M000141_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/internals/shared/category.rb, line 6</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index_name</span>
         <span class="ruby-identifier">index</span>.<span class="ruby-identifier">name</span>
@@ -224,9 +224,9 @@ The index directory for this category.
             </div>
             
             <div class="method">
-                <div class="title" id="M000146">
+                <div class="title" id="M000143">
                     
-                    <a name="M000146"></a><b>index_path</b>(bundle_name, type)
+                    <a name="M000143"></a><b>index_path</b>(bundle_name, type)
                     
                 </div>
                 
@@ -242,12 +242,12 @@ Path and partial filename of a specific index on this category.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000146_source')" id="l_M000146_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000143_source')" id="l_M000143_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/9fe8c8646454bdf97a9ad830685785f1d71d507c/server/lib/picky/internals/shared/category.rb#L15" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000146_source" class="dyn-source">
+                    <div id="M000143_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/internals/shared/category.rb, line 15</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index_path</span> <span class="ruby-identifier">bundle_name</span>, <span class="ruby-identifier">type</span>
         <span class="ruby-node">&quot;#{index_directory}/#{name}_#{bundle_name}_#{type}&quot;</span>
@@ -258,9 +258,9 @@ Path and partial filename of a specific index on this category.
             </div>
             
             <div class="method">
-                <div class="title" id="M000152">
+                <div class="title" id="M000149">
                     
-                    <a name="M000152"></a><b>prepare_index_directory</b>()
+                    <a name="M000149"></a><b>prepare_index_directory</b>()
                     
                 </div>
                 
@@ -276,12 +276,12 @@ Creates the index directory including all necessary paths above it.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000152_source')" id="l_M000152_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000149_source')" id="l_M000149_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/9fe8c8646454bdf97a9ad830685785f1d71d507c/server/lib/picky/internals/shared/category.rb#L45" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000152_source" class="dyn-source">
+                    <div id="M000149_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/internals/shared/category.rb, line 45</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepare_index_directory</span>
         <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">index_directory</span>
@@ -292,9 +292,9 @@ Creates the index directory including all necessary paths above it.
             </div>
             
             <div class="method">
-                <div class="title" id="M000148">
+                <div class="title" id="M000145">
                     
-                    <a name="M000148"></a><b>prepared_index_file</b>(&amp;block)
+                    <a name="M000145"></a><b>prepared_index_file</b>(&amp;block)
                     
                 </div>
                 
@@ -303,12 +303,12 @@ Creates the index directory including all necessary paths above it.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000148_source')" id="l_M000148_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000145_source')" id="l_M000145_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/9fe8c8646454bdf97a9ad830685785f1d71d507c/server/lib/picky/internals/shared/category.rb#L24" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000148_source" class="dyn-source">
+                    <div id="M000145_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/internals/shared/category.rb, line 24</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepared_index_file</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
         <span class="ruby-ivar">@prepared_index_file</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Internals</span><span class="ruby-operator">::</span><span class="ruby-constant">Index</span><span class="ruby-operator">::</span><span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">Text</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">prepared_index_path</span>
@@ -320,9 +320,9 @@ Creates the index directory including all necessary paths above it.
             </div>
             
             <div class="method">
-                <div class="title" id="M000147">
+                <div class="title" id="M000144">
                     
-                    <a name="M000147"></a><b>prepared_index_path</b>()
+                    <a name="M000144"></a><b>prepared_index_path</b>()
                     
                 </div>
                 
@@ -331,12 +331,12 @@ Creates the index directory including all necessary paths above it.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000147_source')" id="l_M000147_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000144_source')" id="l_M000144_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/9fe8c8646454bdf97a9ad830685785f1d71d507c/server/lib/picky/internals/shared/category.rb#L21" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000147_source" class="dyn-source">
+                    <div id="M000144_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/internals/shared/category.rb, line 21</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prepared_index_path</span>
         <span class="ruby-ivar">@prepared_index_path</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;#{index_directory}/prepared_#{name}_index&quot;</span>
@@ -347,9 +347,9 @@ Creates the index directory including all necessary paths above it.
             </div>
             
             <div class="method">
-                <div class="title" id="M000150">
+                <div class="title" id="M000147">
                     
-                    <a name="M000150"></a><b>to_s</b>()
+                    <a name="M000147"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -358,12 +358,12 @@ Creates the index directory including all necessary paths above it.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000150_source')" id="l_M000150_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000147_source')" id="l_M000147_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/9fe8c8646454bdf97a9ad830685785f1d71d507c/server/lib/picky/internals/shared/category.rb#L34" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000150_source" class="dyn-source">
+                    <div id="M000147_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/internals/shared/category.rb, line 34</span>
       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
         <span class="ruby-node">&quot;#{index.name} #{name}&quot;</span>

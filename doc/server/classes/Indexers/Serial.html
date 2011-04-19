@@ -39,7 +39,7 @@
 Uses a category to index its data.
 </p>
 <p>
-Note: It is called serial since it indexes each
+Note: It is called serial since it indexes each category separately.
 </p>
 
     </div>
@@ -54,15 +54,6 @@ Note: It is called serial since it indexes each
     
     <div class="sectiontitle">Methods</div>
     <dl class="methods">
-    
-        <dt>I</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000134">indexing_message</a></li>
-                
-            </ul>
-        </dd>
     
         <dt>N</dt>
         <dd>
@@ -134,7 +125,7 @@ Note: It is called serial since it indexes each
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000131_source')" id="l_M000131_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/215059b9817aaaf6b4ddcccce78bb6080274846c/server/lib/picky/internals/indexers/serial.rb#L15" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/internals/indexers/serial.rb#L15" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000131_source" class="dyn-source">
@@ -148,33 +139,6 @@ Note: It is called serial since it indexes each
             </div>
             
             <div class="sectiontitle">Instance Public methods</div>
-            
-            <div class="method">
-                <div class="title" id="M000134">
-                    
-                    <a name="M000134"></a><b>indexing_message</b>()
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000134_source')" id="l_M000134_source">show</a>
-                        
-                        | <a href="http://github.com/floere/picky/blob/215059b9817aaaf6b4ddcccce78bb6080274846c/server/lib/picky/internals/indexers/serial.rb#L47" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000134_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/internals/indexers/serial.rb, line 47</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">indexing_message</span>
-      <span class="ruby-identifier">timed_exclaim</span> <span class="ruby-node">%Q{&quot;#{@category.identifier}&quot;: Starting serial indexing.}</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
             
             <div class="method">
                 <div class="title" id="M000133">
@@ -198,7 +162,7 @@ Harvest the data from the source, tokenize, and write to an intermediate
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000133_source')" id="l_M000133_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/215059b9817aaaf6b4ddcccce78bb6080274846c/server/lib/picky/internals/indexers/serial.rb#L28" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/internals/indexers/serial.rb#L28" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000133_source" class="dyn-source">
@@ -246,7 +210,7 @@ The tokenizer used is a cached tokenizer from the category.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000132_source')" id="l_M000132_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/215059b9817aaaf6b4ddcccce78bb6080274846c/server/lib/picky/internals/indexers/serial.rb#L21" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/internals/indexers/serial.rb#L21" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000132_source" class="dyn-source">
