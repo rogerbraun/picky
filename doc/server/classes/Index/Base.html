@@ -81,7 +81,7 @@ Note: An <a href="../Index.html">Index</a> holds both an
                 
                 <li><a href="#M000026">define_key_format</a>,</li>
                 
-                <li><a href="#M000030">define_ranged_category</a>,</li>
+                <li><a href="#M000031">define_ranged_category</a>,</li>
                 
                 <li><a href="#M000024">define_source</a></li>
                 
@@ -183,7 +183,7 @@ front end.
 <h3>Options</h3>
 <ul>
 <li>source: Where the data comes from, e.g. <a
-href="../Sources/CSV.html#M000191">Sources::CSV.new(...)</a>. Optional, can
+href="../Sources/CSV.html#M000187">Sources::CSV.new(...)</a>. Optional, can
 be defined in the block using <a href="Base.html#M000023">source</a>.
 
 </li>
@@ -228,11 +228,11 @@ Examples:
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000014_source')" id="l_M000014_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L107" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L113" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000014_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 107</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 113</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {}
       <span class="ruby-identifier">check_name</span> <span class="ruby-identifier">name</span>
       <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>
@@ -306,7 +306,7 @@ mailing list first with your application.rb :)
 </li>
 <li>from: Take the data from the data category with this name. Example: You
 have a source <a
-href="../Sources/CSV.html#M000191">Sources::CSV.new</a>(:title,
+href="../Sources/CSV.html#M000187">Sources::CSV.new</a>(:title,
 file:&#8217;some_file.csv&#8217;) but you want the category to be called
 differently. The you use from: <a
 href="Base.html#M000028">define_category</a>(:similar_title, :from =>
@@ -331,11 +331,11 @@ href="Base.html#M000028">define_category</a>(:similar_title, :from =>
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000027_source')" id="l_M000027_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L241" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L247" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000027_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 241</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 247</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">category</span> <span class="ruby-identifier">category_name</span>, <span class="ruby-identifier">options</span> = {}
       <span class="ruby-identifier">category_name</span> = <span class="ruby-identifier">category_name</span>.<span class="ruby-identifier">to_sym</span>
 
@@ -406,9 +406,9 @@ Alias for <a href="Base.html#M000025">key_format</a>
             </div>
             
             <div class="method">
-                <div class="title" id="M000030">
+                <div class="title" id="M000031">
                     
-                    <a name="M000030"></a><b>define_ranged_category</b>(category_name, range, options = {})
+                    <a name="M000031"></a><b>define_ranged_category</b>(category_name, range, options = {})
                     
                 </div>
                 
@@ -472,11 +472,11 @@ Parameters are the exact same as for indexing.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000021_source')" id="l_M000021_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L201" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L207" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000021_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 201</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 207</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">indexing</span> <span class="ruby-identifier">options</span> = {}
       <span class="ruby-identifier">internal_indexing</span>.<span class="ruby-identifier">define_indexing</span> <span class="ruby-identifier">options</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -518,11 +518,11 @@ category names (or the category from option).
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000025_source')" id="l_M000025_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L223" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L229" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000025_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 223</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 229</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">key_format</span> <span class="ruby-identifier">key_format</span>
       <span class="ruby-identifier">internal_indexing</span>.<span class="ruby-identifier">define_key_format</span> <span class="ruby-identifier">key_format</span>
     <span class="ruby-keyword kw">end</span></pre>
@@ -642,7 +642,7 @@ margin, slower) makes sense.
                 <div class="aka">
                     This method is also aliased as
                     
-                    <a href="Base.html#M000030">define_ranged_category</a>
+                    <a href="Base.html#M000031">define_ranged_category</a>
                     
                 </div>
                 
@@ -652,11 +652,11 @@ margin, slower) makes sense.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000029_source')" id="l_M000029_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L316" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L322" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000029_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 316</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 322</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ranged_category</span> <span class="ruby-identifier">category_name</span>, <span class="ruby-identifier">range</span>, <span class="ruby-identifier">options</span> = {}
       <span class="ruby-identifier">precision</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:precision</span>] <span class="ruby-operator">||</span> <span class="ruby-value">1</span>
 
@@ -705,11 +705,11 @@ category names (or the category from option).
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000023_source')" id="l_M000023_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L212" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/c79e54131ce48dba7f5f820ef23974d8e5e77d65/server/lib/picky/index/base.rb#L218" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000023_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 212</span>
+                        <pre><span class="ruby-comment cmt"># File lib/picky/index/base.rb, line 218</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">source</span> <span class="ruby-identifier">source</span>
       <span class="ruby-identifier">internal_indexing</span>.<span class="ruby-identifier">define_source</span> <span class="ruby-identifier">source</span>
     <span class="ruby-keyword kw">end</span></pre>

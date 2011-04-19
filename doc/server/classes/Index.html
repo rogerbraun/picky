@@ -48,6 +48,7 @@ A Picky <a href="Index.html">Index</a> defines
 
 </li>
 </ul>
+<h2>Howto</h2>
 <p>
 This is a step-by-step description on how to create an index.
 </p>
@@ -69,8 +70,8 @@ source:
 </pre>
 <p>
 In the example, we use an explicit <tt>Sources::CSV</tt> of Picky. However,
-anything that responds to each, and returns an object that answers to id,
-works.
+anything that responds to <tt>each</tt>, and returns an object that answers
+to <tt>id</tt>, works.
 </p>
 <p>
 For example, a 3.0 ActiveRecord class:
@@ -116,12 +117,12 @@ After adding more options, it might look like this:
   end
 </pre>
 <p>
-For this to work, a Book should support methods title, author and
-legacy_isbn_name.
+For this to work, a <tt>Book</tt> should support methods <tt>title</tt>,
+<tt>author</tt> and <tt>legacy_isbn_name</tt>.
 </p>
 <p>
-If it uses <tt>String</tt> ids, use key_format to define a formatting
-method:
+If it uses <tt>String</tt> ids, use <tt>key_format</tt> to define a
+formatting method:
 </p>
 <pre>
   books = Index::Memory.new(:books) do
@@ -131,6 +132,12 @@ method:
     category   :author
     category   :isbn
   end
+</pre>
+<p>
+Finally, use the index for a <tt>Search</tt>:
+</p>
+<pre>
+  route %r{^/media$} =&gt; Search.new(books, dvds, mp3s)
 </pre>
 
     </div>
