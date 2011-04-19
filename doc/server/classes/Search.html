@@ -74,7 +74,7 @@ Terminal.
         <dd>
             <ul>
                 
-                <li><a href="#M000170">boost</a></li>
+                <li><a href="#M000171">boost</a></li>
                 
             </ul>
         </dd>
@@ -83,7 +83,7 @@ Terminal.
         <dd>
             <ul>
                 
-                <li><a href="#M000171">combinations_type_for</a></li>
+                <li><a href="#M000172">combinations_type_for</a></li>
                 
             </ul>
         </dd>
@@ -92,7 +92,7 @@ Terminal.
         <dd>
             <ul>
                 
-                <li><a href="#M000177">execute</a></li>
+                <li><a href="#M000178">execute</a></li>
                 
             </ul>
         </dd>
@@ -101,7 +101,7 @@ Terminal.
         <dd>
             <ul>
                 
-                <li><a href="#M000167">new</a></li>
+                <li><a href="#M000168">new</a></li>
                 
             </ul>
         </dd>
@@ -110,7 +110,7 @@ Terminal.
         <dd>
             <ul>
                 
-                <li><a href="#M000174">raise_different</a></li>
+                <li><a href="#M000175">raise_different</a></li>
                 
             </ul>
         </dd>
@@ -119,11 +119,11 @@ Terminal.
         <dd>
             <ul>
                 
-                <li><a href="#M000176">search</a>,</li>
+                <li><a href="#M000177">search</a>,</li>
                 
-                <li><a href="#M000175">search_with_text</a>,</li>
+                <li><a href="#M000176">search_with_text</a>,</li>
                 
-                <li><a href="#M000168">searching</a></li>
+                <li><a href="#M000169">searching</a></li>
                 
             </ul>
         </dd>
@@ -132,11 +132,11 @@ Terminal.
         <dd>
             <ul>
                 
-                <li><a href="#M000180">to_s</a>,</li>
+                <li><a href="#M000181">to_s</a>,</li>
                 
-                <li><a href="#M000178">tokenized</a>,</li>
+                <li><a href="#M000179">tokenized</a>,</li>
                 
-                <li><a href="#M000169">tokenizer</a></li>
+                <li><a href="#M000170">tokenizer</a></li>
                 
             </ul>
         </dd>
@@ -206,9 +206,9 @@ Terminal.
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000167">
+                <div class="title" id="M000168">
                     
-                    <a name="M000167"></a><b>new</b>(*index_definitions)
+                    <a name="M000168"></a><b>new</b>(*index_definitions)
                     
                 </div>
                 
@@ -253,12 +253,12 @@ It is also possible to define the tokenizer and weights like so. Example:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000167_source')" id="l_M000167_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000168_source')" id="l_M000168_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L35" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000167_source" class="dyn-source">
+                    <div id="M000168_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 35</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-operator">*</span><span class="ruby-identifier">index_definitions</span>
     <span class="ruby-identifier">options</span>      = <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">index_definitions</span>.<span class="ruby-identifier">last</span> <span class="ruby-value">? </span><span class="ruby-identifier">index_definitions</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
@@ -277,9 +277,9 @@ It is also possible to define the tokenizer and weights like so. Example:
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000170">
+                <div class="title" id="M000171">
                     
-                    <a name="M000170"></a><b>boost</b>(options)
+                    <a name="M000171"></a><b>boost</b>(options)
                     
                 </div>
                 
@@ -304,12 +304,12 @@ Example:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000170_source')" id="l_M000170_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000171_source')" id="l_M000171_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L71" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000170_source" class="dyn-source">
+                    <div id="M000171_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 71</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">boost</span> <span class="ruby-identifier">options</span>
     <span class="ruby-identifier">weights</span>  = <span class="ruby-identifier">options</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Query</span><span class="ruby-operator">::</span><span class="ruby-constant">Weights</span>.<span class="ruby-identifier">new</span>
@@ -321,9 +321,9 @@ Example:
             </div>
             
             <div class="method">
-                <div class="title" id="M000171">
+                <div class="title" id="M000172">
                     
-                    <a name="M000171"></a><b>combinations_type_for</b>(index_definitions_ary)
+                    <a name="M000172"></a><b>combinations_type_for</b>(index_definitions_ary)
                     
                 </div>
                 
@@ -332,12 +332,12 @@ Example:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000171_source')" id="l_M000171_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000172_source')" id="l_M000172_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L88" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000171_source" class="dyn-source">
+                    <div id="M000172_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 88</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">combinations_type_for</span> <span class="ruby-identifier">index_definitions_ary</span>
     <span class="ruby-identifier">index_types</span> = <span class="ruby-identifier">index_definitions_ary</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:class</span>)
@@ -351,9 +351,9 @@ Example:
             </div>
             
             <div class="method">
-                <div class="title" id="M000177">
+                <div class="title" id="M000178">
                     
-                    <a name="M000177"></a><b>execute</b>(tokens, ids, offset)
+                    <a name="M000178"></a><b>execute</b>(tokens, ids, offset)
                     
                 </div>
                 
@@ -363,7 +363,72 @@ Execute a search using Query::Tokens.
 </p>
 <p>
 Note: Internal method, use <a
-href="Search.html#M000175">search_with_text</a>.
+href="Search.html#M000176">search_with_text</a>.
+</p>
+
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000178_source')" id="l_M000178_source">show</a>
+                        
+                        | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L142" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000178_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 142</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">execute</span> <span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">ids</span>, <span class="ruby-identifier">offset</span>
+    <span class="ruby-constant">Results</span>.<span class="ruby-identifier">from</span> <span class="ruby-identifier">ids</span>, <span class="ruby-identifier">offset</span>, <span class="ruby-identifier">sorted_allocations</span>(<span class="ruby-identifier">tokens</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000175">
+                    
+                    <a name="M000175"></a><b>raise_different</b>(index_types)
+                    
+                </div>
+                
+                
+                
+                
+                <div class="sourcecode">
+                    <p class="source-link">
+                        Source: <a href="javascript:toggleSource('M000175_source')" id="l_M000175_source">show</a>
+                        
+                        | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L105" target="_blank" class="github_url">on GitHub</a>
+                        
+                    </p>
+                    <div id="M000175_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 105</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">raise_different</span> <span class="ruby-identifier">index_types</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">DifferentTypesError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">index_types</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="method">
+                <div class="title" id="M000177">
+                    
+                    <a name="M000177"></a><b>search</b>(tokens, ids = 20, offset = 0)
+                    
+                </div>
+                
+                <div class="description">
+                  <p>
+Runs the actual search using Query::Tokens.
+</p>
+<p>
+Note: Internal method, use <a
+href="Search.html#M000176">search_with_text</a>.
 </p>
 
                 </div>
@@ -375,75 +440,10 @@ href="Search.html#M000175">search_with_text</a>.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000177_source')" id="l_M000177_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L142" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000177_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 142</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">execute</span> <span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">ids</span>, <span class="ruby-identifier">offset</span>
-    <span class="ruby-constant">Results</span>.<span class="ruby-identifier">from</span> <span class="ruby-identifier">ids</span>, <span class="ruby-identifier">offset</span>, <span class="ruby-identifier">sorted_allocations</span>(<span class="ruby-identifier">tokens</span>)
-  <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000174">
-                    
-                    <a name="M000174"></a><b>raise_different</b>(index_types)
-                    
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000174_source')" id="l_M000174_source">show</a>
-                        
-                        | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L105" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000174_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 105</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">raise_different</span> <span class="ruby-identifier">index_types</span>
-    <span class="ruby-identifier">raise</span> <span class="ruby-constant">DifferentTypesError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">index_types</span>)
-  <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000176">
-                    
-                    <a name="M000176"></a><b>search</b>(tokens, ids = 20, offset = 0)
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Runs the actual search using Query::Tokens.
-</p>
-<p>
-Note: Internal method, use <a
-href="Search.html#M000175">search_with_text</a>.
-</p>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000176_source')" id="l_M000176_source">show</a>
-                        
                         | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L127" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000176_source" class="dyn-source">
+                    <div id="M000177_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 127</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">search</span> <span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">ids</span> = <span class="ruby-value">20</span>, <span class="ruby-identifier">offset</span> = <span class="ruby-value">0</span>
     <span class="ruby-identifier">results</span> = <span class="ruby-keyword kw">nil</span>
@@ -461,9 +461,9 @@ href="Search.html#M000175">search_with_text</a>.
             </div>
             
             <div class="method">
-                <div class="title" id="M000175">
+                <div class="title" id="M000176">
                     
-                    <a name="M000175"></a><b>search_with_text</b>(text, ids = 20, offset = 0)
+                    <a name="M000176"></a><b>search_with_text</b>(text, ids = 20, offset = 0)
                     
                 </div>
                 
@@ -499,12 +499,12 @@ request.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000175_source')" id="l_M000175_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000176_source')" id="l_M000176_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L119" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000175_source" class="dyn-source">
+                    <div id="M000176_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 119</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">search_with_text</span> <span class="ruby-identifier">text</span>, <span class="ruby-identifier">ids</span> = <span class="ruby-value">20</span>, <span class="ruby-identifier">offset</span> = <span class="ruby-value">0</span>
     <span class="ruby-identifier">search</span> <span class="ruby-identifier">tokenized</span>(<span class="ruby-identifier">text</span>), <span class="ruby-identifier">ids</span>, <span class="ruby-identifier">offset</span>
@@ -515,9 +515,9 @@ request.
             </div>
             
             <div class="method">
-                <div class="title" id="M000168">
+                <div class="title" id="M000169">
                     
-                    <a name="M000168"></a><b>searching</b>(options)
+                    <a name="M000169"></a><b>searching</b>(options)
                     
                 </div>
                 
@@ -542,12 +542,12 @@ Example:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000168_source')" id="l_M000168_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000169_source')" id="l_M000169_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L53" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000168_source" class="dyn-source">
+                    <div id="M000169_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 53</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">searching</span> <span class="ruby-identifier">options</span>
     <span class="ruby-ivar">@tokenizer</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:tokenize</span>)
@@ -562,9 +562,9 @@ Example:
             </div>
             
             <div class="method">
-                <div class="title" id="M000180">
+                <div class="title" id="M000181">
                     
-                    <a name="M000180"></a><b>to_s</b>()
+                    <a name="M000181"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -580,12 +580,12 @@ Display some nice information for the user.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000180_source')" id="l_M000180_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000181_source')" id="l_M000181_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L163" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000180_source" class="dyn-source">
+                    <div id="M000181_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 163</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
     <span class="ruby-identifier">s</span> = <span class="ruby-node">&quot;#{self.class}(&quot;</span>
@@ -600,9 +600,9 @@ Display some nice information for the user.
             </div>
             
             <div class="method">
-                <div class="title" id="M000178">
+                <div class="title" id="M000179">
                     
-                    <a name="M000178"></a><b>tokenized</b>(text)
+                    <a name="M000179"></a><b>tokenized</b>(text)
                     
                 </div>
                 
@@ -626,12 +626,12 @@ Parameters:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000178_source')" id="l_M000178_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000179_source')" id="l_M000179_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L151" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000178_source" class="dyn-source">
+                    <div id="M000179_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 151</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tokenized</span> <span class="ruby-identifier">text</span>
     <span class="ruby-identifier">tokenizer</span>.<span class="ruby-identifier">tokenize</span> <span class="ruby-identifier">text</span>
@@ -642,9 +642,9 @@ Parameters:
             </div>
             
             <div class="method">
-                <div class="title" id="M000169">
+                <div class="title" id="M000170">
                     
-                    <a name="M000169"></a><b>tokenizer</b>()
+                    <a name="M000170"></a><b>tokenizer</b>()
                     
                 </div>
                 
@@ -653,12 +653,12 @@ Parameters:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000169_source')" id="l_M000169_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000170_source')" id="l_M000170_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/4a6dbd19d92dccd86e3ac958f975186131c0f0b0/server/lib/picky/search.rb#L60" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000169_source" class="dyn-source">
+                    <div id="M000170_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/search.rb, line 60</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tokenizer</span>
     <span class="ruby-ivar">@tokenizer</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Internals</span><span class="ruby-operator">::</span><span class="ruby-constant">Tokenizers</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">default</span>

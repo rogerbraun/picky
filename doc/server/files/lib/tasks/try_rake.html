@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>lib/tasks/try.rake</li>
-            <li>Last modified: 2011-03-22 02:43:08 +1100</li>
+            <li>Last modified: 2011-04-16 10:34:20 +1000</li>
         </ul>
     </div>
 
@@ -37,14 +37,16 @@
 
     tokenizer = category ? Indexes.find(index, category).tokenizer : Internals::Tokenizers::Index.default
 
-    puts &quot;\&quot;#{text}\&quot; is saved in the index as             #{tokenizer.tokenize(text.dup).to_a}&quot;
+    puts &quot;\&quot;#{text}\&quot; is saved in the index as              #{tokenizer.tokenize(text.dup).to_a}&quot;
   end
 
   # desc &quot;Try how a given word would be tokenized when querying.&quot;
   task :query, [:text] =&gt; :application do |_, options|
     text = options.text
 
-    puts &quot;\&quot;#{text}\&quot; as a query will be preprocessed into #{Internals::Tokenizers::Query.default.tokenize(text.dup).to_a.map(&amp;:to_s).map(&amp;:to_sym)}&quot;
+    puts &quot;\&quot;#{text}\&quot; as a search will be preprocessed into #{Internals::Tokenizers::Query.default.tokenize(text.dup).to_a.map(&amp;:to_s).map(&amp;:to_sym)}&quot;
+    puts
+    puts &quot;(category qualifiers, e.g. title: are removed if they do not exist as a qualifier, so 'toitle:bla' -&gt; 'bla')&quot;
   end
 
   # desc &quot;Try the given text with both the index and the query (type:category optional).&quot;

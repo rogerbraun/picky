@@ -3,7 +3,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <title>Hash</title>
+    <title>Object</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
@@ -16,7 +16,7 @@
     <div class="banner">
         <h1>
             <span class="type">Class</span> 
-            Hash 
+            Object 
             
                 <span class="parent">&lt; 
                     
@@ -26,8 +26,6 @@
             
         </h1>
         <ul class="files">
-            
-            <li><a href="../files/lib/picky-client/client_rb.html">lib/picky-client/client.rb</a></li>
             
         </ul>
     </div>
@@ -45,11 +43,11 @@
     <div class="sectiontitle">Methods</div>
     <dl class="methods">
     
-        <dt>T</dt>
+        <dt>E</dt>
         <dd>
             <ul>
                 
-                <li><a href="#M000018">to_query</a></li>
+                <li><a href="#M000044">extract_categories</a></li>
                 
             </ul>
         </dd>
@@ -71,9 +69,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000018">
+                <div class="title" id="M000044">
                     
-                    <a name="M000018"></a><b>to_query</b>(namespace = nil)
+                    <a name="M000044"></a><b>extract_categories</b>(results)
                     
                 </div>
                 
@@ -82,17 +80,17 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000018_source')" id="l_M000018_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000044_source')" id="l_M000044_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/28704a2a989a82f636cb90c28329a5d64bfc952c/client/lib/picky-client/client.rb#L127" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/36d0fe208864a3daaf58d918e9b75c67080340cc/client/lib/picky-client/spec/support/matchers/have_categories.rb#L19" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000018_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky-client/client.rb, line 127</span>
-  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_query</span> <span class="ruby-identifier">namespace</span> = <span class="ruby-keyword kw">nil</span>
-    <span class="ruby-identifier">collect</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
-      <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_query</span>(<span class="ruby-identifier">namespace</span> <span class="ruby-value">? </span><span class="ruby-node">&quot;#{namespace}[#{key}]&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">key</span>)
-    <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">sort</span> <span class="ruby-operator">*</span> <span class="ruby-value str">'&amp;'</span>
+                    <div id="M000044_source" class="dyn-source">
+                        <pre><span class="ruby-comment cmt"># File lib/picky-client/spec/support/matchers/have_categories.rb, line 19</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_categories</span> <span class="ruby-identifier">results</span>
+    <span class="ruby-identifier">results</span>.<span class="ruby-identifier">allocations</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">allocation</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">allocation</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">combination</span><span class="ruby-operator">|</span> <span class="ruby-identifier">combination</span>[<span class="ruby-value">0</span>] }
+    <span class="ruby-keyword kw">end</span>
   <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>

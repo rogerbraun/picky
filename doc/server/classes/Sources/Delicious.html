@@ -77,7 +77,7 @@ Examples:
         <dd>
             <ul>
                 
-                <li><a href="#M000203">harvest</a></li>
+                <li><a href="#M000208">harvest</a></li>
                 
             </ul>
         </dd>
@@ -86,7 +86,7 @@ Examples:
         <dd>
             <ul>
                 
-                <li><a href="#M000200">new</a></li>
+                <li><a href="#M000205">new</a></li>
                 
             </ul>
         </dd>
@@ -95,7 +95,7 @@ Examples:
         <dd>
             <ul>
                 
-                <li><a href="#M000202">to_s</a></li>
+                <li><a href="#M000207">to_s</a></li>
                 
             </ul>
         </dd>
@@ -117,9 +117,9 @@ Examples:
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000200">
+                <div class="title" id="M000205">
                     
-                    <a name="M000200"></a><b>new</b>(username, password)
+                    <a name="M000205"></a><b>new</b>(username, password)
                     
                 </div>
                 
@@ -128,12 +128,12 @@ Examples:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000200_source')" id="l_M000200_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000205_source')" id="l_M000205_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/sources/delicious.rb#L15" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000200_source" class="dyn-source">
+                    <div id="M000205_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/sources/delicious.rb, line 15</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">username</span>, <span class="ruby-identifier">password</span>
       <span class="ruby-identifier">check_gem</span>
@@ -148,9 +148,9 @@ Examples:
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000203">
+                <div class="title" id="M000208">
                     
-                    <a name="M000203"></a><b>harvest</b>(category)
+                    <a name="M000208"></a><b>harvest</b>(category)
                     
                 </div>
                 
@@ -166,12 +166,12 @@ Harvests the data to index.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000203_source')" id="l_M000203_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000208_source')" id="l_M000208_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/sources/delicious.rb#L33" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000203_source" class="dyn-source">
+                    <div id="M000208_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/sources/delicious.rb, line 33</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">harvest</span> <span class="ruby-identifier">category</span>
       <span class="ruby-identifier">get_data</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">indexed_id</span>, <span class="ruby-identifier">data</span><span class="ruby-operator">|</span>
@@ -186,9 +186,9 @@ Harvests the data to index.
             </div>
             
             <div class="method">
-                <div class="title" id="M000202">
+                <div class="title" id="M000207">
                     
-                    <a name="M000202"></a><b>to_s</b>()
+                    <a name="M000207"></a><b>to_s</b>()
                     
                 </div>
                 
@@ -197,12 +197,12 @@ Harvests the data to index.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000202_source')" id="l_M000202_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000207_source')" id="l_M000207_source">show</a>
                         
                         | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/sources/delicious.rb#L27" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000202_source" class="dyn-source">
+                    <div id="M000207_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/sources/delicious.rb, line 27</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>
       <span class="ruby-node">&quot;#{self.class.name}(#{@username})&quot;</span>

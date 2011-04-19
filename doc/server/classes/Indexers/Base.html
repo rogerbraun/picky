@@ -49,16 +49,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000124">index</a></li>
-                
-            </ul>
-        </dd>
-    
-        <dt>K</dt>
-        <dd>
-            <ul>
-                
-                <li><a href="#M000125">key_format</a></li>
+                <li><a href="#M000126">index</a></li>
                 
             </ul>
         </dd>
@@ -80,9 +71,9 @@
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000124">
+                <div class="title" id="M000126">
                     
-                    <a name="M000124"></a><b>index</b>()
+                    <a name="M000126"></a><b>index</b>()
                     
                 </div>
                 
@@ -103,53 +94,16 @@ from time to time by joining.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000124_source')" id="l_M000124_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000126_source')" id="l_M000126_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/internals/indexers/base.rb#L13" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/dc2ce6e3ad003310374f91d8e78330bfc06c18ea/server/lib/picky/internals/indexers/base.rb#L13" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000124_source" class="dyn-source">
+                    <div id="M000126_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky/internals/indexers/base.rb, line 13</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
       <span class="ruby-identifier">indexing_message</span>
       <span class="ruby-identifier">process</span>
-    <span class="ruby-keyword kw">end</span></pre>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="method">
-                <div class="title" id="M000125">
-                    
-                    <a name="M000125"></a><b>key_format</b>()
-                    
-                </div>
-                
-                <div class="description">
-                  <p>
-Delegates the key format to the source.
-</p>
-<p>
-Default is to_i.
-</p>
-
-                </div>
-                
-                
-                
-                
-                <div class="sourcecode">
-                    <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000125_source')" id="l_M000125_source">show</a>
-                        
-                        | <a href="http://github.com/floere/picky/blob/f1f1fe045eaf9e376fc05fc632f904b3d785a968/server/lib/picky/internals/indexers/base.rb#L22" target="_blank" class="github_url">on GitHub</a>
-                        
-                    </p>
-                    <div id="M000125_source" class="dyn-source">
-                        <pre><span class="ruby-comment cmt"># File lib/picky/internals/indexers/base.rb, line 22</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">key_format</span>
-      <span class="ruby-identifier">source</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:key_format</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">key_format</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">:to_i</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
                 </div>

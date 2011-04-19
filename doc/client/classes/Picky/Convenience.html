@@ -50,7 +50,7 @@ Use this class to extend the hash that the client returns.
         <dd>
             <ul>
                 
-                <li><a href="#M000034">allocations</a>,</li>
+                <li><a href="#M000032">allocations</a>,</li>
                 
                 <li><a href="#M000035">allocations_size</a></li>
                 
@@ -61,7 +61,7 @@ Use this class to extend the hash that the client returns.
         <dd>
             <ul>
                 
-                <li><a href="#M000033">clear_ids</a></li>
+                <li><a href="#M000031">clear_ids</a></li>
                 
             </ul>
         </dd>
@@ -70,7 +70,7 @@ Use this class to extend the hash that the client returns.
         <dd>
             <ul>
                 
-                <li><a href="#M000031">empty?</a>,</li>
+                <li><a href="#M000029">empty?</a>,</li>
                 
                 <li><a href="#M000038">entries</a></li>
                 
@@ -81,7 +81,7 @@ Use this class to extend the hash that the client returns.
         <dd>
             <ul>
                 
-                <li><a href="#M000032">ids</a></li>
+                <li><a href="#M000030">ids</a></li>
                 
             </ul>
         </dd>
@@ -121,9 +121,9 @@ Use this class to extend the hash that the client returns.
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000034">
+                <div class="title" id="M000032">
                     
-                    <a name="M000034"></a><b>allocations</b>()
+                    <a name="M000032"></a><b>allocations</b>()
                     
                 </div>
                 
@@ -139,12 +139,12 @@ Returns the allocations.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000034_source')" id="l_M000034_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000032_source')" id="l_M000032_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/9905414d2a1f5f0f12f06112c5f33032a7c00e59/client/lib/picky-client/convenience.rb#L33" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/9932bd2a72e309518b074314352d8771b217dd66/client/lib/picky-client/convenience.rb#L33" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000034_source" class="dyn-source">
+                    <div id="M000032_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky-client/convenience.rb, line 33</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">allocations</span>
       <span class="ruby-ivar">@allocations</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@allocations</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">:allocations</span>]
@@ -175,7 +175,7 @@ Returns the number of allocations.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000035_source')" id="l_M000035_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/9905414d2a1f5f0f12f06112c5f33032a7c00e59/client/lib/picky-client/convenience.rb#L38" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/9932bd2a72e309518b074314352d8771b217dd66/client/lib/picky-client/convenience.rb#L38" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000035_source" class="dyn-source">
@@ -189,9 +189,9 @@ Returns the number of allocations.
             </div>
             
             <div class="method">
-                <div class="title" id="M000033">
+                <div class="title" id="M000031">
                     
-                    <a name="M000033"></a><b>clear_ids</b>()
+                    <a name="M000031"></a><b>clear_ids</b>()
                     
                 </div>
                 
@@ -207,12 +207,12 @@ Removes all ids of each allocation.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000033_source')" id="l_M000033_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000031_source')" id="l_M000031_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/9905414d2a1f5f0f12f06112c5f33032a7c00e59/client/lib/picky-client/convenience.rb#L27" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/9932bd2a72e309518b074314352d8771b217dd66/client/lib/picky-client/convenience.rb#L27" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000033_source" class="dyn-source">
+                    <div id="M000031_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky-client/convenience.rb, line 27</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear_ids</span>
       <span class="ruby-identifier">allocations</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">allocation</span><span class="ruby-operator">|</span> <span class="ruby-identifier">allocation</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">clear</span> }
@@ -223,9 +223,9 @@ Removes all ids of each allocation.
             </div>
             
             <div class="method">
-                <div class="title" id="M000031">
+                <div class="title" id="M000029">
                     
-                    <a name="M000031"></a><b>empty?</b>()
+                    <a name="M000029"></a><b>empty?</b>()
                     
                 </div>
                 
@@ -241,12 +241,12 @@ Are there any allocations?
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000031_source')" id="l_M000031_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000029_source')" id="l_M000029_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/9905414d2a1f5f0f12f06112c5f33032a7c00e59/client/lib/picky-client/convenience.rb#L9" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/9932bd2a72e309518b074314352d8771b217dd66/client/lib/picky-client/convenience.rb#L9" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000031_source" class="dyn-source">
+                    <div id="M000029_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky-client/convenience.rb, line 9</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">empty?</span>
       <span class="ruby-identifier">allocations</span>.<span class="ruby-identifier">empty?</span>
@@ -297,7 +297,7 @@ empty array.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000038_source')" id="l_M000038_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/9905414d2a1f5f0f12f06112c5f33032a7c00e59/client/lib/picky-client/convenience.rb#L92" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/9932bd2a72e309518b074314352d8771b217dd66/client/lib/picky-client/convenience.rb#L92" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000038_source" class="dyn-source">
@@ -318,9 +318,9 @@ empty array.
             </div>
             
             <div class="method">
-                <div class="title" id="M000032">
+                <div class="title" id="M000030">
                     
-                    <a name="M000032"></a><b>ids</b>(limit = 20)
+                    <a name="M000030"></a><b>ids</b>(limit = nil)
                     
                 </div>
                 
@@ -331,7 +331,7 @@ results. By default only maximally 20.)
 </p>
 <h3>Parameters</h3>
 <ul>
-<li>limit: The amount of ids to return. Default is 20.
+<li>limit: The amount of ids to return. Default is all of them.
 
 </li>
 </ul>
@@ -343,16 +343,16 @@ results. By default only maximally 20.)
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000032_source')" id="l_M000032_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000030_source')" id="l_M000030_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/9905414d2a1f5f0f12f06112c5f33032a7c00e59/client/lib/picky-client/convenience.rb#L19" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/9932bd2a72e309518b074314352d8771b217dd66/client/lib/picky-client/convenience.rb#L19" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000032_source" class="dyn-source">
+                    <div id="M000030_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky-client/convenience.rb, line 19</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ids</span> <span class="ruby-identifier">limit</span> = <span class="ruby-value">20</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ids</span> <span class="ruby-identifier">limit</span> = <span class="ruby-keyword kw">nil</span>
       <span class="ruby-identifier">ids</span> = []
-      <span class="ruby-identifier">allocations</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">allocation</span><span class="ruby-operator">|</span> <span class="ruby-identifier">allocation</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">limit</span>; <span class="ruby-identifier">ids</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">id</span> } }
+      <span class="ruby-identifier">allocations</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">allocation</span><span class="ruby-operator">|</span> <span class="ruby-identifier">allocation</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">limit</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">limit</span>; <span class="ruby-identifier">ids</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">id</span> } }
       <span class="ruby-identifier">ids</span>
     <span class="ruby-keyword kw">end</span></pre>
                     </div>
@@ -363,7 +363,7 @@ results. By default only maximally 20.)
             <div class="method">
                 <div class="title" id="M000037">
                     
-                    <a name="M000037"></a><b>populate_with</b>(model_class, amount = 20, options = {})
+                    <a name="M000037"></a><b>populate_with</b>(model_class, options = {})
                     
                 </div>
                 
@@ -384,14 +384,14 @@ If you don&#8217;t pass it a block, it will just use the AR results.
 class.
 
 </li>
-<li>amount: Amount of results to populate. Default 20.
-
-</li>
 </ul>
 <h3>Options</h3>
 <ul>
-<li>options are directly passed through to the ModelClass.find(ids, options)
-method. Default is {}.
+<li>up_to: Amount of results to populate. All of them by default.
+
+</li>
+<li>The rest of the options are directly passed through to the
+ModelClass.find(ids, options) method. Default is {}.
 
 </li>
 </ul>
@@ -405,13 +405,13 @@ method. Default is {}.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000037_source')" id="l_M000037_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/9905414d2a1f5f0f12f06112c5f33032a7c00e59/client/lib/picky-client/convenience.rb#L61" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/9932bd2a72e309518b074314352d8771b217dd66/client/lib/picky-client/convenience.rb#L61" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000037_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/picky-client/convenience.rb, line 61</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">populate_with</span> <span class="ruby-identifier">model_class</span>, <span class="ruby-identifier">amount</span> = <span class="ruby-value">20</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
-      <span class="ruby-identifier">the_ids</span> = <span class="ruby-identifier">ids</span> <span class="ruby-identifier">amount</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">populate_with</span> <span class="ruby-identifier">model_class</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+      <span class="ruby-identifier">the_ids</span> = <span class="ruby-identifier">ids</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:up_to</span>)
 
       <span class="ruby-identifier">objects</span> = <span class="ruby-identifier">model_class</span>.<span class="ruby-identifier">find</span> <span class="ruby-identifier">the_ids</span>, <span class="ruby-identifier">options</span>
 
@@ -459,7 +459,7 @@ Returns the total of results.
                     <p class="source-link">
                         Source: <a href="javascript:toggleSource('M000036_source')" id="l_M000036_source">show</a>
                         
-                        | <a href="http://github.com/floere/picky/blob/9905414d2a1f5f0f12f06112c5f33032a7c00e59/client/lib/picky-client/convenience.rb#L43" target="_blank" class="github_url">on GitHub</a>
+                        | <a href="http://github.com/floere/picky/blob/9932bd2a72e309518b074314352d8771b217dd66/client/lib/picky-client/convenience.rb#L43" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
                     <div id="M000036_source" class="dyn-source">
