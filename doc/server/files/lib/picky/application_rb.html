@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>lib/picky/application.rb</li>
-            <li>Last modified: 2011-04-19 21:05:54 +1000</li>
+            <li>Last modified: Wed May 04 20:56:49 +1000 2011</li>
         </ul>
     </div>
 
@@ -85,7 +85,7 @@ That on itself won&#8217;t do much good.
 </p>
 <p>
 Note that a Redis index is also available: <a
-href="../../../classes/Index/Redis.html#M000030">Index::Redis.new</a>.
+href="../../../classes/Index/Redis.html#M000032">Index::Redis.new</a>.
 </p>
 <h2>category(identifier, options = {})</h2>
 <p>
@@ -125,7 +125,7 @@ for info)
 So now we have indexed data (the title), but nobody to ask the index
 anything.
 </p>
-<h2><a href="../../../classes/Search.html#M000165">Search.new</a>(*indexes, options = {})</h2>
+<h2><a href="../../../classes/Search.html#M000169">Search.new</a>(*indexes, options = {})</h2>
 <p>
 We need somebody who asks the index (a Query object, also see <a
 href="http://github.com/floere/picky/wiki/Queries-Configuration">github.com/floere/picky/wiki/Queries-Configuration</a>):
@@ -174,7 +174,7 @@ Now run the indexer and server:
 Run your first query:
 </p>
 <pre>
-  $ curl 'localhost:8080/books/full?query=hello server'
+  $ curl 'localhost:8080/books?query=hello server'
 </pre>
 <p>
 Nice, right? Your first query!
