@@ -80,7 +80,11 @@ inline VALUE memory_efficient_intersect(VALUE self, VALUE unsorted_array_of_arra
     current_array = RARRAY_PTR(rb_array_of_arrays)[i];
     for (j = 0; j < RARRAY_LEN(current_array); j++) {
       v = vv = rb_ary_elt(current_array, j);
-      if (st_delete(RHASH_TBL(hash), (unsigned long*)&vv, 0)) {
+      
+      /*if (st_delete(RHASH_TBL(hash), (unsigned long*)&vv, 0)) {
+        rb_ary_push(smallest_array, v);
+      }*/
+      if (!NIL_P(rb_hash_delete(hash, vv))) {
         rb_ary_push(smallest_array, v);
       }
     }

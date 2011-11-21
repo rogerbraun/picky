@@ -114,11 +114,11 @@ end
 include Picky
 
 backends = [
-  Backends::Redis.new,
+ # Backends::Redis.new,
   Backends::Memory.new,
-  Backends::File.new,
-  Backends::SQLite.new,
-  Backends::Redis.new,
+  #Backends::File.new,
+  #Backends::SQLite.new,
+  #Backends::Redis.new,
 ]
 
 definition = Proc.new do
